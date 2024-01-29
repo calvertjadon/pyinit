@@ -1,0 +1,32 @@
+[build-system]
+requires = [ "setuptools", "setuptools-scm",]
+build-backend = "setuptools.build_meta"
+
+[project]
+description = ""
+version = "1.0.0"
+requires-python = ">=3.12,<4"
+dependencies = []
+name = "asdf"
+[[project.authors]]
+name = ""
+email = ""
+
+["project.scripts"]
+asdf = "asdf.cli:main"
+
+[project.optional-dependencies]
+dev = [ "pytest", "pytest-cov", "build",]
+
+[project.scripts]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--cov --cov-report html --cov-report term-missing --cov-fail-under 95"
+testpaths = [ "tests",]
+
+[tool.coverage.report]
+exclude_also = [ "if __name__ == .__main__.:",]
+
+[tool.coverage.run]
+source = [ "src",]
