@@ -3,20 +3,13 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-# name = "pyinit"
-authors = [{ name = "", email = "" }]
 description = ""
 version = "1.0.0"
 requires-python = ">=3.12,<4"
-dependencies = [
-    # "gtkycu-utils@git+https://github.com/GTKYCU-IT/utils@v1.0.0",
-]
+dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov", "build"]
-
-[project.scripts]
-# pyinit = "pyinit.cli:main"
 
 [tool.pytest.ini_options]
 minversion = "6.0"

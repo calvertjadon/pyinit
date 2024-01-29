@@ -46,9 +46,13 @@ class Project:
 
         pyproject = toml.loads(self._res.pyproject.read_text())
         pyproject["project"]["name"] = self.module_name
-        pyproject["project.scripts"] = {
+        pyproject["project"]["scripts"] = {
             self.module_name: f"{self.module_name}.cli:main"
         }
+
+        pyproject["project"]["authors"] = [
+            {"name": "John Doe", "email": "jdoe@email.com"}
+        ]
         (self.path / "pyproject.toml").write_text(toml.dumps(pyproject))
 
         self.tests_path.mkdir()

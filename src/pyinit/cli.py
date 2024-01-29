@@ -27,7 +27,8 @@ def main(argv=sys.argv[1:]):
 
     if args.venv:
         venv_path = project.path / VENV_NAME
-        venv.create(str(venv_path))
+        builder = venv.EnvBuilder(with_pip=True, upgrade_deps=True)
+        builder.create(str(venv_path))
         print(f"created virtual environment at {venv_path}")
 
 
